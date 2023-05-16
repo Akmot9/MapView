@@ -25,9 +25,11 @@
           name="OpenStreetMap"
           :max-zoom="12"
         />
-        <l-marker v-for="message in messages" :key="message.abuse" 
+        <l-marker v-for="message in messages" 
+          :key="message.abuse" 
           :lat-lng="[message.lat, message.lng]"
-        > </l-marker>
+        > 
+      </l-marker>
       
       </l-map>
     </div>
