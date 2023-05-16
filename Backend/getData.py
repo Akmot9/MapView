@@ -29,18 +29,17 @@ def get_signin_logs():
     try:
         # Connexion à la base de données PostgreSQL
         conn = psycopg2.connect(
-            host="your_database_host",
-            port="your_database_port",
-            dbname="your_database_name",
-            user="your_database_user",
-            password="your_database_password",
+        host="localhost",
+        database="messages",
+        user="postgres",
+        password="1706"
         )
 
         # Création d'un curseur pour exécuter des requêtes
         cur = conn.cursor()
 
         # Exécution de la requête SQL pour récupérer les logs de connexion
-        cur.execute("SELECT * FROM signin_logs")
+        cur.execute("SELECT * FROM signinlogs;")
 
         # Récupération des résultats
         results = cur.fetchall()
@@ -48,12 +47,12 @@ def get_signin_logs():
         # Conversion des résultats en une liste de dictionnaires
         signin_logs = [
             {
-                "abuse": result[0],
-                "address": result[1],
-                "lat": result[2],
-                "lng": result[3],
-                "name": result[4],
-                "threatintelname": result[5],
+                "abuse": result[1],
+                "address": result[2],
+                "lat": result[3],
+                "lng": result[4],
+                "name": result[5],
+                "threatintelname": result[6],
             }
             for result in results
         ]
