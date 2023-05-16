@@ -1,47 +1,37 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div id="container">
+    <div id="mapContainer">
+      <l-map
+        v-model="zoom"
+        v-model:zoom="zoom"
+        :center="[43.12442, 5.92836]"
+        :options="{ attributionControl: false }"
+        class="disabled-map"
+      >
+      <l-tile-layer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        layer-type="base"
+        name="OpenStreetMap"
+        :max-zoom="12"
+        />
+      </l-map>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
+<script setup>
+import "leaflet/dist/leaflet.css";
+import { ref } from 'vue';
+import { 
+  LMap, 
+  LTileLayer 
+} from '@vue-leaflet/vue-leaflet';
+
+const zoom = 10
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+#mapContainer {
+  height: 180px;
 }
 </style>
