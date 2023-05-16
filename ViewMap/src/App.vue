@@ -8,11 +8,11 @@
         :options="{ attributionControl: false }"
         class="disabled-map"
       >
-      <l-tile-layer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        layer-type="base"
-        name="OpenStreetMap"
-        :max-zoom="12"
+        <l-tile-layer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          layer-type="base"
+          name="OpenStreetMap"
+          :max-zoom="12"
         />
       </l-map>
     </div>
@@ -22,16 +22,22 @@
 <script setup>
 import "leaflet/dist/leaflet.css";
 import { ref } from 'vue';
-import { 
-  LMap, 
-  LTileLayer 
-} from '@vue-leaflet/vue-leaflet';
+import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet';
 
-const zoom = 10
+const zoom = ref(10);
 </script>
 
 <style scoped>
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 #mapContainer {
-  height: 180px;
+  width: 600px;
+  height: 400px;
+  border: 1px solid #ccc;
 }
 </style>

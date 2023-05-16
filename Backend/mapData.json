@@ -1,0 +1,31 @@
+{
+    "AzureAD": [],
+    "Firewall": [],
+    "AuditLogs": [],
+    "SigninLogs": [
+      {
+        "abuse": "None",
+        "address": "129.142.180.78",
+        "lat": "55.6702",
+        "lng": "12.5298",
+        "name": "TELENOR_DANMARK_AS, DK",
+        "threatintelname": "None"
+      },
+      {
+        "abuse": "None",
+        "address": "130.225.247.86",
+        "lat": "57.0501",
+        "lng": "9.9249",
+        "name": "FSKNET-DK Forskningsnettet - Danish network for Research and Education, EU",
+        "threatintelname": "None"
+      },
+      {
+        "abuse": "None",
+        "address": "130.225.247.89",
+        "lat": "57.0501",
+        "lng": "9.9249",
+        "name": "FSKNET-DK Forskningsnettet - Danish network for Research and Education, EU",
+        "threatintelname": "None"
+      }
+    ]
+  }
