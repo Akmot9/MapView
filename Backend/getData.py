@@ -68,3 +68,14 @@ def get_signin_logs():
         print("Error while connecting to PostgreSQL database:", error)
         return []
 
+file_path = "/home/akmot/Téléchargements/response_full.json"
+import json  # Import the json module
+def read_json_file(file):
+    with open(file, "r") as f:  # Open the JSON file
+        data = json.load(f)  # Load the JSON data
+    return data  # Return the loaded data
+
+@app.get("/gps")
+def get_gps():
+    data = read_json_file(file_path) 
+    return data

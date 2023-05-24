@@ -12,6 +12,7 @@
   </div>
   <div id="container">
     <div id="mapContainer">
+      <div class="Map">Map : </div>
       <l-map
         v-model="zoom"
         v-model:zoom="zoom"
@@ -80,4 +81,11 @@ onMounted(async () => {
 .messages {
   color: black;
 }
+
+.Map {
+  color: black;
+  background-color: rgb(255, 255, 255);
+
+}
 </style>
+
