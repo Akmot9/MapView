@@ -1,4 +1,5 @@
 <template>
+  <!--
   <div v-for="message in messages" :key="message.abuse" class="messages">
       <p>Abuse: {{ message.abuse }}</p>
       <p>Address: {{ message.address }}</p>
@@ -10,9 +11,10 @@
         
 
   </div>
+  -->
   <div id="container">
     <div id="mapContainer">
-      <div class="Map">Map : </div>
+      
       <l-map
         v-model="zoom"
         v-model:zoom="zoom"
@@ -50,18 +52,7 @@ const zoom = ref(10)
 
 const messages = ref([])
 
-onMounted(async () => {
-  try {
-    const response = await fetch("http://127.0.0.1:8000/signin-logs");
-    if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}`);
-    }
-    const data = await response.json();
-    messages.value = data;
-  } catch (error) {
-    console.error(error);
-  }
-});
+
 </script>
 
 <style scoped>
@@ -82,10 +73,6 @@ onMounted(async () => {
   color: black;
 }
 
-.Map {
-  color: black;
-  background-color: rgb(255, 255, 255);
 
-}
 </style>
 
